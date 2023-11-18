@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cócteles</title>
+</head>
+
+<body>
+	<h1>Lista de Cócteles</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Alcohólico</th>
+                <th>Vaso</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cocktail in cocktails %}
+                <tr>
+                    <td><a href="{{ url_for('cocktail_detail', id=cocktail.idDrink) }}">{{ cocktail.strDrink }}</a></td>
+                    <td>{{ cocktail.strCategory }}</td>
+                    <td>{{ cocktail.strAlcoholic }}</td>
+                    <td>{{ cocktail.strGlass }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Cóctel</title>
+</head>
+
+<body>
+
+    <h1>Detalles del Cóctel</h1>
+    
+    {% if cocktail %}
+        <h2>{{ cocktail.strDrink }}</h2>
+        <p><strong>Categoría:</strong> {{ cocktail.strCategory }}</p>
+        <p><strong>Alcohólico:</strong> {{ cocktail.strAlcoholic }}</p>
+        <p><strong>Vaso:</strong> {{ cocktail.strGlass }}</p>
+        <p><strong>Instrucciones:</strong> {{ cocktail.strInstructions }}</p>
+        <p><strong>Ingredientes:</strong> {{ cocktail.strIngredient1 }}, {{ cocktail.strIngredient2 }}, ...</p>
+        <p><strong>Imagen:</strong> <img src="{{ cocktail.strDrinkThumb }}" alt="{{ cocktail.strDrink }}"></p>
+    {% else %}
+        <p>No se encontraron detalles para este cóctel.</p>
+    {% endif %}
+
+</body>
+
+</html>
